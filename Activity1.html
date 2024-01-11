@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas Party Feedback Form</title>
+</head>
+<body>
+
+<h2>Christmas Party Feedback Form</h2>
+
+<form action="#" method="post">
+
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required><br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required><br>
+
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" required><br>
+
+<label>Which option best describes you:</label><br>
+<input type="radio" id="student" name="role" value="student" required>
+<label for="student">Student</label><br>
+<input type="radio" id="adult" name="role" value="adult" required>
+<label for="adult">Adult</label><br>
+
+<label>Did you enjoy the party?</label><br>
+<input type="radio" id="yes" name="enjoyed" value="yes" required>
+<label for="yes">Yes</label><br>
+<input type="radio" id="no" name="enjoyed" value="no" required>
+<label for="no">No</label><br>
+
+<label for="likes">What did you like about the program? (Select all that apply)</label><br>
+<input type="checkbox" id="games" name="likes[]" value="games">
+<label for="games">Games</label><br>
+<input type="checkbox" id="learning" name="likes[]" value="learning">
+<label for="learning">The learning session from Industry Experts</label><br>
+<input type="checkbox" id="meeting" name="likes[]" value="meeting">
+<label for="meeting">Meeting new People</label><br>
+<input type="checkbox" id="place" name="likes[]" value="place">
+<label for="place">Event’s Place</label><br>
+<input type="checkbox" id="raffle" name="likes[]" value="raffle">
+<label for="raffle">Raffle!</label><br>
+<input type="checkbox" id="food" name="likes[]" value="food">
+<label for="food">Food and drinks</label><br>
+
+<label for="comments">Any comments or suggestions:</label><br>
+<textarea id="comments" name="comments" rows="4" cols="50"></textarea><br>
+
+<button type="reset">Reset</button>
+<button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
