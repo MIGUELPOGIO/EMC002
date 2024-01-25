@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Showcase</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+margin: 20px;
+}
+
+#elementToHideShow {
+display: block;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>JavaScript Showcase</h1>
+
+<!-- 1. Change content -->
+<p id="changeContent">Original Content</p>
+<button onclick="changeContent()">Change Content</button>
+
+<!-- 2. Change font style -->
+<p id="changeFontStyle">This text has the default font style.</p>
+<button onclick="changeFontStyle()">Change Font Style</button>
+
+<!-- 3. Hide Element -->
+<div id="elementToHideShow">
+<p>This element can be hidden and shown.</p>
+<button onclick="hideElement()">Hide Element</button>
+</div>
+
+<!-- 4. Show Element -->
+<button onclick="showElement()">Show Element</button>
+
+<!-- 5. Display "Hello World" in console -->
+<script>
+// Function to display "Hello World" in the console
+console.log("Hello World");
+</script>
+
+<!-- 6. Display "Welcome to CIIT" in alert box -->
+<script>
+// Function to display an alert with "Welcome to CIIT"
+function displayWelcomeMessage() {
+alert("Welcome to CIIT");
+}
+</script>
+<button onclick="displayWelcomeMessage()">Display Welcome Message</button>
+
+<!-- 7. x = 5, y = 3, Compute 𝑥𝑦 and display it in the html page -->
+<script>
+// Variables x and y
+var x = 5;
+var y = 3;
+
+// Compute 𝑥𝑦 and display it on the page
+document.write("<p>" + x + " raised to the power of " + y + " is: " + Math.pow(x, y) + "</p>");
+</script>
+
+<!-- JavaScript functions for interaction -->
+<script>
+// Function to change content
+function changeContent() {
+document.getElementById("changeContent").innerHTML = "Content Changed!";
+}
+
+// Function to change font style
+function changeFontStyle() {
+document.getElementById("changeFontStyle").style.fontStyle = "italic";
+}
+
+// Function to hide the element
+function hideElement() {
+document.getElementById("elementToHideShow").style.display = "none";
+}
+
+// Function to show the element
+function showElement() {
+document.getElementById("elementToHideShow").style.display = "block";
+}
+</script>
+
+</body>
+</html>
