@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Supplement Store</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        header {
+            background: linear-gradient(to right, #343a40, #1c2125);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        nav {
+            background: linear-gradient(to right, #495057, #343a40);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #343a40;
+        }
+
+        p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            background-color: #343a40;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #login, #register {
+            display: inline-block;
+            vertical-align: top;
+            width: 48%;
+        }
+
+        #register {
+            margin-left: 4%;
+        }
+
+        footer {
+            background: linear-gradient(to right, #343a40, #1c2125);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 style="font-size: 36px;">Gym Supplement Store</h1>
+        <a href="#login">Login</a>
+        <a href="#register">Register</a>
+    </header>
+
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#products">Products</a>
+    </nav>
+
+    <section>
+        <div id="login">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <input type="button" value="Login">
+            </form>
+        </div>
+
+        <div id="register">
+            <h2>Register</h2>
+            <form>
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+                <br>
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                <br>
+                <input type="button" value="Register">
+            </form>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to our modern and professional gym supplement store. Discover our commitment to providing high-quality supplements for your fitness journey.</p>
+    </section>
+
+    <section id="products">
+        <h2>Products</h2>
+        <p>Explore our premium range of supplements tailored to support your fitness goals. From protein powders to vitamins, we've got you covered.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gym Supplement Store. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
