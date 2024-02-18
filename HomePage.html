@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,18 +81,35 @@
             background-color: #218c53;
         }
     </style>
+    <script>
+        function redirectToLogin() {
+            // Replace this with the actual login page URL
+            window.location.href = 'login_signup.html';
+        }
+
+        function redirectToSignup() {
+            // Replace this with the actual signup page URL
+            window.location.href = 'login_signup.html';
+        }
+
+        function showProductList() {
+            // Replace this with the actual product list page URL
+            window.location.href = 'product_list.html';
+        }
+    </script>
 </head>
+
 <body>
     <header>
         <h1>Gym Supplements Store</h1>
     </header>
 
     <nav>
-        <a href="#">Home</a> | 
-        <a href="#">Products</a> | 
-        <a href="#">About Us</a> | 
-        <a href="#">Login</a> | 
-        <a href="#" class="signup-button">Sign Up</a>
+        <a href="#">Home</a> |
+        <a href="#" onclick="showProductList()">Products</a> |
+        <a href="#">About Us</a> |
+        <a href="#" onclick="redirectToLogin()">Login</a> |
+        <a href="#" onclick="redirectToSignup()" class="signup-button">Sign Up</a>
     </nav>
 
     <section class="container">
@@ -121,13 +139,16 @@
     </section>
 
     <section class="container">
-        <h2>Do you want a free membership?</h2>
-        <p>Sign up now to receive exclusive discounts and fitness tips!</p>
-        <a href="#" class="signup-button">Sign Up Here</a>
+        <h2>Customer Care</h2>
+        <p>Contact us at:</p>
+        <p>Phone: +63 123 456 7890</p>
+        <p>Email: info@gymsupplementsstore.com</p>
     </section>
 
     <footer>
         <p>&copy; 2024 Gym Supplements Store. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
+
