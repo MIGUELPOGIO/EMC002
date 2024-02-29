@@ -111,7 +111,7 @@
     <section class="container">
         <div id="loginFormContainer" class="form-container">
             <h2>Login</h2>
-            <form id="loginForm" onsubmit="login(event)">
+            <form action="contact.php" method="post" id="loginForm" onsubmit="login(event)">
                 <div class="input-group">
                     <label for="loginUsername">Username:</label>
                     <input type="text" id="loginUsername" required>
@@ -124,16 +124,16 @@
             </form>
         </div>
 
-        <div id="signupFormContainer" class="form-container">
+        <div style="display:none" id="signupFormContainer" class="form-container"> 
             <h2>Sign Up</h2>
-            <form id="signupForm" onsubmit="signup(event)">
+            <form id="signupForm" method="post" action="../Sample Codes/contact.php">
                 <div class="input-group">
                     <label for="signupUsername">Username:</label>
-                    <input type="text" id="signupUsername" required>
-                </div>
+                    <input name="uname"  type="text" id="signupUsername" required>
+                </div> 
                 <div class="input-group">
                     <label for="signupPassword">Password:</label>
-                    <input type="password" id="signupPassword" required>
+                    <input name="password" type="password" id="signupPassword" required>
                 </div>
                 <button type="submit" class="button signup-button">Sign Up</button>
             </form>
@@ -161,19 +161,7 @@
             signupFormContainer.style.display = 'block';
         }
 
-        function login(event) {
-            event.preventDefault();
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-            alert(`Login - Username: ${username}, Password: ${password}`);
-        }
-
-        function signup(event) {
-            event.preventDefault();
-            const username = document.getElementById('signupUsername').value;
-            const password = document.getElementById('signupPassword').value;
-            alert(`Sign Up - Username: ${username}, Password: ${password}`);
-        }
+        
     </script>
 </body>
 

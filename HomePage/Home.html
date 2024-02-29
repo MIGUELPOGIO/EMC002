@@ -1,5 +1,3 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,18 +90,15 @@
         }
     </style>
     <script>
-        function redirectToLogin() {
-            // Replace this with the actual login page URL
-            window.location.href = 'login_signup.html';
+        function redirectToHomepage() {
+            window.location.href = 'homepage.html';
         }
 
-        function redirectToSignup() {
-            // Replace this with the actual signup page URL
+        function redirectToLoginSignup() {
             window.location.href = 'login_signup.html';
         }
 
         function showProductList() {
-            // Replace this with the actual product list page URL
             window.location.href = 'product_list.html';
         }
 
@@ -145,13 +140,15 @@
     </header>
 
     <nav>
-        <a href="#">Home</a> |
-        <a href="#" onclick="showProductList()">Products</a> |
+        <a href="index.html">Home</a> |
+        <a href="product_list.html" onclick="showProductList()">Products</a> |
         <a href="#">About Us</a> |
-        <a href="#" onclick="redirectToLogin()">Login</a> |
-        <a href="#" onclick="redirectToSignup()" class="signup-button">Sign Up</a>
+        <a href="login_signup.html" onclick="redirectToLogin()">Login</a> |
+        <a href="login_signup.html" onclick="redirectToSignup()" class="signup-button">Sign Up</a> |
+        <a href="contact.html">Contact</a> <!-- Add this line for the Contact page -->
     </nav>
-
+    
+    
     <section class="container">
         <div class="product">
             <h2>Whey Protein</h2>
@@ -191,4 +188,3 @@
 </body>
 
 </html>
-
