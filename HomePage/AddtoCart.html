@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Gym Supplements Store</title>
+    <title>Add to Cart - Gym Supplements Store</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,57 +40,39 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .form-container {
-            background-color: #fff;
+        .product {
             border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
         }
 
         .button {
             display: inline-block;
             padding: 10px 20px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .submit-button {
             background-color: #333;
             color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
         }
 
         .button:hover {
             background-color: #555;
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        textarea {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 3px;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Gym Supplements Store</h1>
+        <h1>Add to Cart</h1>
     </header>
 
     <nav>
@@ -103,16 +85,11 @@
     </nav>
 
     <section class="container">
-        <div class="form-container">
-            <h2>Contact Us</h2>
-            <p>Feel free to reach out to us with any questions or concerns. We'll get back to you as soon as possible.</p>
-            <form id="contactForm" onsubmit="submitContactForm(event)">
-                <div class="input-group">
-                    <label for="contactMessage">Your Message:</label>
-                    <textarea id="contactMessage" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="button submit-button">Submit</button>
-            </form>
+        <div class="product">
+            <h2>Product Name</h2>
+            <p>Description of the product.</p>
+            <p>Price: $XX.XX</p>
+            <button class="button">Add to Cart</button>
         </div>
     </section>
 
@@ -121,12 +98,26 @@
     </footer>
 
     <script>
-        function submitContactForm(event) {
-            event.preventDefault();
-            const message = document.getElementById('contactMessage').value;
-            alert(`Thank you for your message: ${message}`);
-            // You can add logic here to send the message to your backend or handle it as needed.
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            var addToCartButtons = document.querySelectorAll('.button');
+            addToCartButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Retrieve product details from URL query parameters
+                    var params = new URLSearchParams(window.location.search);
+                    var productName = params.get('productName');
+                    var description = params.get('description');
+                    var price = params.get('price');
+
+                    // Perform action to add to cart (e.g., send to backend, store in local storage, etc.)
+                    // For demonstration purposes, let's log the details to console
+                    console.log("Product Name:", productName);
+                    console.log("Description:", description);
+                    console.log("Price:", price);
+
+                    // You can redirect to a confirmation page or perform any other action here
+                });
+            });
+        });
     </script>
 </body>
 

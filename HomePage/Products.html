@@ -51,6 +51,9 @@
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
         }
 
         .button {
@@ -61,6 +64,7 @@
             color: #fff;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            cursor: pointer;
         }
 
         .button:hover {
@@ -138,6 +142,26 @@
                     modal.style.display = 'none';
                 }
             };
+
+            // Function to redirect to AddtoCart.html with product details
+            function redirectToCart(productName, description, price) {
+                var url = 'AddtoCart.html?productName=' + encodeURIComponent(productName) +
+                    '&description=' + encodeURIComponent(description) +
+                    '&price=' + encodeURIComponent(price);
+                window.location.href = url;
+            }
+
+            // Event listener for "View Details" buttons
+            var viewDetailsButtons = document.querySelectorAll('.view-details');
+            viewDetailsButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var productDiv = button.closest('.product');
+                    var productName = productDiv.querySelector('h2').innerText;
+                    var description = productDiv.querySelector('p').innerText;
+                    var price = ''; // Add price here if available
+                    redirectToCart(productName, description, price);
+                });
+            });
         });
     </script>
 </head>
@@ -148,31 +172,31 @@
     </header>
 
     <nav>
-        
-        <a href="Home.html" id="">Home</a> |
-        <a href="Contact.html">Contact</a> |
-        <a href="login_signup.html">Login</a> |
-        <a href="login_signup.html" class="signup-button">Sign Up</a> |
-        <a href="contact.html">Contact</a>
+        <a href="Home.html" onclick="redirectToHomepage()">Home</a> |
+        <a href="Products.html" onclick="showProductList()">Products</a> |
+        <a href="login_signup.html" onclick="redirectToLogin()">Login</a> |
+        <a href="login_signup.html" onclick="redirectToSignup()" class="signup-button">Sign Up</a> |
+        <a href="contact.html">Contact</a>|
+        <a href="AddtoCart.html">AddtoCart</a>|
     </nav>
 
     <section class="container">
         <div class="product">
             <h2>Whey Protein</h2>
             <p>High-quality whey protein for muscle recovery and growth.</p>
-            <a href="#" class="button">View Details</a>
+            <button class="button view-details">View Details</button>
         </div>
 
         <div class="product">
             <h2>Pre-Workout Supplement</h2>
             <p>Boost your energy and focus before hitting the gym.</p>
-            <a href="#" class="button">View Details</a>
+            <button class="button view-details">View Details</button>
         </div>
 
         <div class="product">
             <h2>BCAA</h2>
             <p>Support muscle recovery and reduce muscle soreness.</p>
-            <a href="#" class="button">View Details</a>
+            <button class="button view-details">View Details</button>
         </div>
         <!-- Add more product sections as needed -->
     </section>
@@ -202,19 +226,19 @@
             <div class="product">
                 <h3>Whey Protein</h3>
                 <p>High-quality whey protein for muscle recovery and growth.</p>
-                <a href="#" class="button">View Details</a>
+                <button class="button view-details">View Details</button>
             </div>
 
             <div class="product">
                 <h3>Pre-Workout Supplement</h3>
                 <p>Boost your energy and focus before hitting the gym.</p>
-                <a href="#" class="button">View Details</a>
+                <button class="button view-details">View Details</button>
             </div>
 
             <div class="product">
                 <h3>BCAA</h3>
                 <p>Support muscle recovery and reduce muscle soreness.</p>
-                <a href="#" class="button">View Details</a>
+                <button class="button view-details">View Details</button>
             </div>
             <!-- Add more product sections as needed -->
         </div>
