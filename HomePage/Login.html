@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Gym Supplements Store</title>
+    <title>Login - Gym Supplements Store</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,19 +58,23 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
-        }
-
-        .submit-button {
-            background-color: #333;
             color: #fff;
         }
 
-        .button:hover {
+        .login-button {
+            background-color: #333;
+        }
+
+        .login-button:hover {
             background-color: #555;
         }
 
-        .input-group {
-            margin-bottom: 15px;
+        .signup-button {
+            background-color: #27ae60;
+        }
+
+        .signup-button:hover {
+            background-color: #218c53;
         }
 
         label {
@@ -78,12 +82,13 @@
             margin-bottom: 5px;
         }
 
-        textarea {
+        input {
             width: 100%;
             padding: 8px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 3px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -94,24 +99,27 @@
     </header>
 
     <nav>
-        <a href="Home.html" onclick="redirectToHomepage()">Home</a> |
-        <a href="Products.html" onclick="showProductList()">Products</a> |
-        <a href="Signup.html" onclick="redirectToLogin()">Login</a> |
-        <a href="Login.html" onclick="redirectToSignup()" class="signup-button">Sign Up</a> |
-        <a href="contact.html">Contact</a>|
-        <a href="AddtoCart.html">AddtoCart</a>|
+        <a href="Home.html">Home</a> |
+        <a href="Products.html">Products</a> |
+        <a href="Contact.html">Contact</a> |
+        <a href="AddtoCart.html">AddtoCart</a> |
+        <a href="Signup.html" class="button signup-button">Sign Up</a> | <!-- Added Signup button -->
+        <a href="login.html" class="button">Login</a>
     </nav>
 
     <section class="container">
-        <div class="form-container">
-            <h2>Contact Us</h2>
-            <p>Feel free to reach out to us with any questions or concerns. We'll get back to you as soon as possible.</p>
-            <form id="contactForm" onsubmit="submitContactForm(event)">
+        <div id="loginFormContainer" class="form-container">
+            <h2>Login</h2>
+            <form id="loginForm" method="post" action="contact.php">
                 <div class="input-group">
-                    <label for="contactMessage">Your Message:</label>
-                    <textarea id="contactMessage" rows="4" required></textarea>
+                    <label for="loginUsername">Username:</label>
+                    <input name="username" type="text" id="loginUsername" required>
                 </div>
-                <button type="submit" class="button submit-button">Submit</button>
+                <div class="input-group">
+                    <label for="loginPassword">Password:</label>
+                    <input name="password" type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="button login-button" name="loginForm">Login</button>
             </form>
         </div>
     </section>
@@ -119,15 +127,6 @@
     <footer>
         <p>&copy; 2024 Gym Supplements Store. All rights reserved.</p>
     </footer>
-
-    <script>
-        function submitContactForm(event) {
-            event.preventDefault();
-            const message = document.getElementById('contactMessage').value;
-            alert(`Thank you for your message: ${message}`);
-            // You can add logic here to send the message to your backend or handle it as needed.
-        }
-    </script>
 </body>
 
 </html>

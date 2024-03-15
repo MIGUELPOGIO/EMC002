@@ -68,6 +68,19 @@
             background-color: #555;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var params = new URLSearchParams(window.location.search);
+            var productName = params.get('productName');
+            var notification = document.getElementById('notification');
+            notification.innerText = 'Product: ' + productName;
+
+            var checkoutButton = document.getElementById('checkoutButton');
+            checkoutButton.addEventListener('click', function () {
+                alert('Your order has been confirmed!');
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -76,49 +89,22 @@
     </header>
 
     <nav>
-        <a href="Home.html" onclick="redirectToHomepage()">Home</a> |
-        <a href="Products.html" onclick="showProductList()">Products</a> |
-        <a href="login_signup.html" onclick="redirectToLogin()">Login</a> |
-        <a href="login_signup.html" onclick="redirectToSignup()" class="signup-button">Sign Up</a> |
+        <a href="Home.html">Home</a> |
+        <a href="Products.html">Products</a> |
+        <a href="Login.html">Login</a> |
+        <a href="Signup.html" class="signup-button">Sign Up</a> |
         <a href="contact.html">Contact</a>|
         <a href="AddtoCart.html">AddtoCart</a>|
     </nav>
 
     <section class="container">
-        <div class="product">
-            <h2>Product Name</h2>
-            <p>Description of the product.</p>
-            <p>Price: $XX.XX</p>
-            <button class="button">Add to Cart</button>
-        </div>
+        <div id="notification"></div>
+        <a href="#" id="checkoutButton" class="button">Checkout</a>
     </section>
 
     <footer>
         <p>&copy; 2024 Gym Supplements Store. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var addToCartButtons = document.querySelectorAll('.button');
-            addToCartButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    // Retrieve product details from URL query parameters
-                    var params = new URLSearchParams(window.location.search);
-                    var productName = params.get('productName');
-                    var description = params.get('description');
-                    var price = params.get('price');
-
-                    // Perform action to add to cart (e.g., send to backend, store in local storage, etc.)
-                    // For demonstration purposes, let's log the details to console
-                    console.log("Product Name:", productName);
-                    console.log("Description:", description);
-                    console.log("Price:", price);
-
-                    // You can redirect to a confirmation page or perform any other action here
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

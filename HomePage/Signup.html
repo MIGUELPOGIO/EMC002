@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Sign Up - Gym Supplements Store</title>
+    <title>Sign Up - Gym Supplements Store</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,18 +60,13 @@
             transition: background-color 0.3s ease;
         }
 
-        .login-button {
-            background-color: #333;
-            color: #fff;
-        }
-
         .signup-button {
             background-color: #27ae60;
             color: #fff;
         }
 
         .button:hover {
-            background-color: #555;
+            background-color: #218c53;
         }
 
         .input-group {
@@ -103,29 +98,14 @@
         <a href="Products.html">Products</a> |
         <a href="Contact.html">Contact</a> |
         <a href="AddtoCart.html">AddtoCart</a>|
-        <a  class="toggle-button button login-button" onclick="showLogin()">Login</a>|
-        <a  class="toggle-button button signup-button" onclick="showSignup()">Sign Up</a>|
+        <a href="login.html">Login</a>|
+        <a class="toggle-button button signup-button" onclick="showSignup()">Sign Up</a>|
     </nav>
 
     <section class="container">
-        <div id="loginFormContainer" class="form-container" style="display:none;">
-            <h2>Login</h2>
-            <form action="contact.php" method="post" id="loginForm" onsubmit="login(event)">
-                <div class="input-group">
-                    <label for="loginUsername">Username:</label>
-                    <input type="text" id="loginUsername" required>
-                </div>
-                <div class="input-group">
-                    <label for="loginPassword">Password:</label>
-                    <input type="password" id="loginPassword" required>
-                </div>
-                <button type="submit" class="button login-button">Login</button>
-            </form>
-        </div>
-
         <div id="signupFormContainer" class="form-container">
             <h2>Sign Up</h2>
-            <form id="signupForm" method="post" action="../Sample Codes/contact.php">
+            <form id="signupForm" method="post" action="contact.php">
                 <div class="input-group">
                     <label for="signupUsername">Username:</label>
                     <input name="username" type="text" id="signupUsername" required>
@@ -138,7 +118,6 @@
                     <label for="signupPassword">Password:</label>
                     <input name="password" type="password" id="signupPassword" required>
                 </div>
-                
                 <div class="input-group">
                     <label for="firstName">First Name:</label>
                     <input name="firstname" type="text" id="firstName" required>
@@ -152,7 +131,7 @@
                     <input name="address" type="text" id="address" required>
                 </div>
                 <div class="input-group">
-                    <label for="mobile">mobile:</label>
+                    <label for="mobile">Mobile:</label>
                     <input name="mobile" type="text" id="mobile" required>
                 </div>
                 <button type="submit" class="button signup-button">Sign Up</button>
@@ -165,23 +144,10 @@
     </footer>
 
     <script>
-        function showLogin() {
-            var loginFormContainer = document.getElementById('loginFormContainer');
-            var signupFormContainer = document.getElementById('signupFormContainer');
-
-            loginFormContainer.style.display = 'block';
-            signupFormContainer.style.display = 'none';
-        }
-
         function showSignup() {
-            var loginFormContainer = document.getElementById('loginFormContainer');
             var signupFormContainer = document.getElementById('signupFormContainer');
-
-            loginFormContainer.style.display = 'none';
             signupFormContainer.style.display = 'block';
         }
-
-        
     </script>
 </body>
 
