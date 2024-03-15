@@ -143,12 +143,10 @@
                 }
             };
 
-            // Function to redirect to AddtoCart.html with product details
-            function redirectToCart(productName, description, price) {
-                var url = 'AddtoCart.html?productName=' + encodeURIComponent(productName) +
-                    '&description=' + encodeURIComponent(description) +
-                    '&price=' + encodeURIComponent(price);
-                window.location.href = url;
+            // Function to add product to cart
+            function addToCart(productName, price) {
+                // In a real application, you would add the product to the cart
+                alert('Added ' + productName + ' to cart. Price: $' + price);
             }
 
             // Event listener for "View Details" buttons
@@ -158,8 +156,8 @@
                     var productDiv = button.closest('.product');
                     var productName = productDiv.querySelector('h2').innerText;
                     var description = productDiv.querySelector('p').innerText;
-                    var price = ''; // Add price here if available
-                    redirectToCart(productName, description, price);
+                    var price = productDiv.querySelector('.price').innerText;
+                    addToCart(productName, price);
                 });
             });
         });
@@ -176,26 +174,29 @@
         <a href="Products.html" onclick="showProductList()">Products</a> |
         <a href="login_signup.html" onclick="redirectToLogin()">Login</a> |
         <a href="login_signup.html" onclick="redirectToSignup()" class="signup-button">Sign Up</a> |
-        <a href="contact.html">Contact</a>|
-        <a href="AddtoCart.html">AddtoCart</a>|
+        <a href="contact.html">Contact</a> |
+        <a href="AddtoCart.html">Add to Cart</a> |
     </nav>
 
     <section class="container">
         <div class="product">
             <h2>Whey Protein</h2>
             <p>High-quality whey protein for muscle recovery and growth.</p>
+            <p class="price">$29.99</p>
             <button class="button view-details">View Details</button>
         </div>
 
         <div class="product">
             <h2>Pre-Workout Supplement</h2>
             <p>Boost your energy and focus before hitting the gym.</p>
+            <p class="price">$39.99</p>
             <button class="button view-details">View Details</button>
         </div>
 
         <div class="product">
             <h2>BCAA</h2>
             <p>Support muscle recovery and reduce muscle soreness.</p>
+            <p class="price">$19.99</p>
             <button class="button view-details">View Details</button>
         </div>
         <!-- Add more product sections as needed -->
@@ -226,19 +227,22 @@
             <div class="product">
                 <h3>Whey Protein</h3>
                 <p>High-quality whey protein for muscle recovery and growth.</p>
-                <button class="button view-details">View Details</button>
+                <p class="price">$29.99</p>
+                <button class="button view-details">Add to Cart</button>
             </div>
 
             <div class="product">
                 <h3>Pre-Workout Supplement</h3>
                 <p>Boost your energy and focus before hitting the gym.</p>
-                <button class="button view-details">View Details</button>
+                <p class="price">$39.99</p>
+                <button class="button view-details">Add to Cart</button>
             </div>
 
             <div class="product">
                 <h3>BCAA</h3>
                 <p>Support muscle recovery and reduce muscle soreness.</p>
-                <button class="button view-details">View Details</button>
+                <p class="price">$19.99</p>
+                <button class="button view-details">Add to Cart</button>
             </div>
             <!-- Add more product sections as needed -->
         </div>
