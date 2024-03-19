@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mobile = $_POST['mobile'];
 
         // SQL query to insert user data into the database
-        $sql = "INSERT INTO `profile` (`username`, `password`, `firstname`, `lastname`, `mobile`, `address`, `email`) VALUES ('$username', '$password', '$email', '$firstname', '$lastname', '$address', '$mobile')";
+        $sql = "INSERT INTO `profile` (`username`, `password`, `firstname`, `lastname`, `mobile`, `address`, `email`) VALUES ('$username', '$password', '$firstname', '$lastname', '$mobile', '$address', '$email')";
 
         // Execute the query
         $result = mysqli_query($con, $sql);

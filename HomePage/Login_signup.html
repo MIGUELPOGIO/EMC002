@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Gym Supplements Store</title>
+    <title>Login/Signup - Gym Supplements Store</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -102,31 +102,65 @@
         <a href="Home.html">Home</a> |
         <a href="Products.html">Products</a> |
         <a href="Contact.html">Contact</a> |
-        <a href="AddtoCart.html">AddtoCart</a> |
-        <a href="Signup.html" class="button signup-button">Sign Up</a> | <!-- Added Signup button -->
-        <a href="login.html" class="button">Login</a>
+        <a href="AddtoCart.html">Add to Cart</a> |
+        <a href="login_signup.html">Signup</a>
+        <a href="Login_signup.html">Login</a>
     </nav>
 
     <section class="container">
-        <div id="loginFormContainer" class="form-container">
-            <h2>Login</h2>
-            <form id="loginForm" method="post" action="contact.php">
-                <div class="input-group">
-                    <label for="loginUsername">Username:</label>
-                    <input name="username" type="text" id="loginUsername" required>
-                </div>
-                <div class="input-group">
-                    <label for="loginPassword">Password:</label>
-                    <input name="password" type="password" id="loginPassword" required>
-                </div>
-                <button type="submit" class="button login-button" name="loginForm">Login</button>
-            </form>
+        <div class="form-container">
+            <div id="loginFormContainer">
+                <h2>Login</h2>
+                <form id="loginForm" method="post" action="login.php">
+                    <div class="input-group">
+                        <label for="loginUsername">Username:</label>
+                        <input name="username" type="text" id="loginUsername" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="loginPassword">Password:</label>
+                        <input name="password" type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="button login-button">Login</button>
+                </form>
+            </div>
+
+            <div id="signupFormContainer" style="display: none;">
+                <h2>Sign Up</h2>
+                <form id="signupForm" method="post" action="signup.php">
+                    <div class="input-group">
+                        <label for="signupUsername">Username:</label>
+                        <input name="username" type="text" id="signupUsername" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signupEmail">Email:</label>
+                        <input name="email" type="email" id="signupEmail" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signupPassword">Password:</label>
+                        <input name="password" type="password" id="signupPassword" required>
+                    </div>
+                    <button type="submit" class="button signup-button">Sign Up</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Gym Supplements Store. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showLoginForm() {
+            document.getElementById('loginFormContainer').style.display = 'block';
+            document.getElementById('signupFormContainer').style.display = 'none';
+        }
+
+        function showSignupForm() {
+            document.getElementById('signupFormContainer').style.display = 'block';
+            document.getElementById('loginFormContainer').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
+
