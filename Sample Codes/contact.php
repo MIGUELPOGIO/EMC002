@@ -1,7 +1,7 @@
 <?php
 // Database connection
 
-$con = mysqli_connect('localhost', 'root', '', 'myonlinestore.sql');
+$con = mysqli_connect('localhost', 'root', '', 'myonlinestore');
 
 
 // Check if the connection was successful
